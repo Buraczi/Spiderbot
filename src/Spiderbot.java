@@ -65,6 +65,7 @@ public class Spiderbot {
 
             } catch (IOException e) {
                 System.err.println(e.getMessage());
+                amountOfErrors++;
             }
         });
     }
@@ -74,10 +75,10 @@ public class Spiderbot {
         Spiderbot spiderbot = new Spiderbot();
 
         spiderbot.getAddresses("https://pl.ign.com", 0);
-        spiderbot.getSpecificAddresses("gameplay|Gameplay|GAMEPLAY"); // znak | wykożystany do wykluczenia braku wyszukań elementów pisanych dużymi literami
+        spiderbot.getSpecificAddresses("gameplay|Gameplay|GAMEPLAY"); // znak | wykorzystany do wykluczenia braku wyszukań elementów pisanych dużymi literami
 
         System.out.println("Amount of web addresses: " + amountOfAddresses);
-        System.out.println("Amount of errors " + amountOfErrors);
+        System.out.println("Amount of errors: " + amountOfErrors);
 
     }
 
